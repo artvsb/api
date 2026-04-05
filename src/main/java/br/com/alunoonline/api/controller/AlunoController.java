@@ -34,7 +34,7 @@ public class AlunoController {
     @ResponseStatus(HttpStatus.OK)
     public Optional<Aluno> buscarAlunoPorId(@PathVariable Long id) { // @PathVariable é a variável que está no caminho
         return alunoService.buscarAlunoPorId(id);
-    }
+    } // Optional<> é usado quando não sabemos se haverá uma resposta a ser retornada
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
