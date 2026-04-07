@@ -2,9 +2,9 @@ Discente: Arthur Vinicio da Silva Barbosa
 
 Projeto: **Aluno Online**
 
-    O projeto acima é um sistema de controle escolar que relaciona alunos, professores, disciplinas e notas. Através do sistema Aluno Online, o Aluno registra dados pessoais como nome e data de nascimento, recebendo um ID que o identifica de forma única no sistema.
+O projeto acima é um sistema de controle escolar que relaciona alunos, professores, disciplinas e notas. Através do sistema Aluno Online, o Aluno registra dados pessoais como nome e data de nascimento, recebendo um ID que o identifica de forma única no sistema.
 
-    O mesmo acontece com o Professor, que registra seus dados pessoais e as notas dos alunos, na(s) disciplina(s) da(s) qual(is) for docente. 
+O mesmo acontece com o Professor, que registra seus dados pessoais e as notas dos alunos, na(s) disciplina(s) da(s) qual(is) for docente. 
 
 **Estrutura do Projeto**
 
@@ -71,23 +71,25 @@ Projeto: **Aluno Online**
     
     Salva informações básicas do aluno, sejam elas: id, nome, e-mail, CPF. O ID é gerado automaticamente pelo sistema com base na ordem numérica (adiciona-se 1 ao último ID gerado) e deve ser único, para garantir a integridade dos dados armazenados; nome, e-mail e CPF são fornecidos pelo usuário.
 
-2. **Professor**
+3. **Professor**
 
-    Salva as mesmas informações coletadas do aluno (id, nome, e-mail, CPF). O ID do professor é unico assim como o ID do aluno, porém armazenado em tabela diferente daquele, de modo que um professor pode ter ID = 1 ao mesmo tempo que existe um aluno com ID = 1, já que ambos os 'ID' pertencem cada um à sua respectiva entidade. O professor também deverá ser vinculado a sua respectiva disciplina.
+    Salva as informações básicas coletadas do professor (id, nome, e-mail, CPF). O ID do professor é unico assim como o ID do aluno, porém armazenado em tabela diferente daquele, de modo que um professor pode ter ID = 1 ao mesmo tempo que existe um aluno com ID = 1, já que ambos os 'ID' pertencem cada um à sua respectiva entidade. O professor também deverá ser vinculado a sua respectiva disciplina.
 
 **Arquitetura do Projeto**
 
-    O Aluno Online é uma API REST baseada em arquitetura em camadas, sendo uma aplicação com o framework Spring Boot, linguagem Java, com dependências gerenciadas pelo Apache Maven e utilizando PostgreSQL para persistência de dados. 
+O Aluno Online é uma API REST baseada em arquitetura em camadas, sendo uma aplicação com o framework Spring Boot, linguagem Java, com dependências gerenciadas pelo Apache Maven e utilizando PostgreSQL para persistência de dados. 
 
-    Cada entidade do sistema possui as camadas Controller, Service, Model, Repository.
+Cada entidade do sistema possui as camadas Controller, Service, Model, Repository.
 
-    A camada Controller é a orquestradora do sistema, pois lida diretamente com o usuário e coordena o fluxo da requisição com base nos dados fornecidos por ele, interpreta-os e aciona a próxima camada - Service, através da injeção de dependência, para que esta execute a regra de negócio determinada internamente através de seus métodos. 
+A camada **Controller** é a orquestradora das chamadas do sistema, pois lida diretamente com o usuário e coordena o fluxo da requisição com base nos dados fornecidos por ele, interpreta-os e aciona a próxima camada - Service, através da injeção de dependência, para que esta execute a regra de negócio determinada internamente através de seus métodos. Esta camada é processada na máquina do usuário e NÃO deve conter a regra de negócio do sistema, para fins de segurança.
 
-    A camada Service, por sua vez, implementa as regras de negócio definidas pela equipe para o correto funcionamento do sistema. Após o devido processamento das chamadas do usuário e das regras de negócio, o Service acessa a camada Repository, que vai promover a integração do Back End com o Banco de Dados através da camada Repository.
+Ao passo que o usuário acessa o endpoint respectivo de sua entidade (aluno, professor), os métodos utilizados por ele estarão designados em, respectivamente, alunoController e professorController. 
 
-    A camada Repository é responsável pela persistência de dados, realizando operações de CRUD no banco de dados. No projeto, ela é implementada com o Spring Data Jpa.
+A camada **Service**, por sua vez, implementa as regras de negócio definidas pela equipe para o correto funcionamento do sistema. Após o devido processamento das chamadas do usuário e das regras de negócio, o Service acessa a camada Repository, que vai promover a integração do Back End com o Banco de Dados através da camada Repository. Esta camada contém a regra de negócio da aplicação, sendo responsável por controlar a forma como cada informação é processada de acordo com seus métodos internos (em alunoController, professorController).
 
-    Por fim, os dados são persistidos em banco de dados PostgreSQL, através das chamadas da camada Repository, que se conecta com cada entidade: alunoRepository, professorRepository, etc. 
+A camada **Repository** é responsável pela persistência de dados, realizando operações de CRUD no banco de dados. No projeto, ela é implementada com o Spring Data Jpa. Através dessa camada e suas interfaces, os dados processados pelo Controller e Service conseguem chegar ao BD e lá ficam armazenados.
+
+Por fim, os dados são persistidos em banco de dados PostgreSQL, através das chamadas da camada Repository, que se conecta com cada entidade: alunoRepository, professorRepository, etc. 
     
 **Funcionamento**
 
