@@ -67,11 +67,11 @@ O mesmo acontece com o Professor, que registra seus dados pessoais e as notas do
 
 **Detalhamento do código**
 
-1. **Aluno**
+1. **Aluno** - alunoController, alunoService, alunoRepository
     
     Salva informações básicas do aluno, sejam elas: id, nome, e-mail, CPF. O ID é gerado automaticamente pelo sistema com base na ordem numérica (adiciona-se 1 ao último ID gerado) e deve ser único, para garantir a integridade dos dados armazenados; nome, e-mail e CPF são fornecidos pelo usuário.
 
-3. **Professor**
+3. **Professor** - professorController, professorService, professorRepository
 
     Salva as informações básicas coletadas do professor (id, nome, e-mail, CPF). O ID do professor é unico assim como o ID do aluno, porém armazenado em tabela diferente daquele, de modo que um professor pode ter ID = 1 ao mesmo tempo que existe um aluno com ID = 1, já que ambos os 'ID' pertencem cada um à sua respectiva entidade. O professor também deverá ser vinculado a sua respectiva disciplina.
 
