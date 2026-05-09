@@ -1,0 +1,36 @@
+package br.com.alunoonline.api.model;
+
+import br.com.alunoonline.api.enums.MatriculaStatusEnum;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Table(name = "matricula_aluno")
+@Entity
+public class MatriculaAluno {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "aluno_id")
+    private Aluno aluno;
+
+    @ManyToOne
+    @JoinColumn(name = "disciplina_id")
+    private Disciplina disciplina;
+
+    private Double nota1;
+
+    private Double nota2;
+
+    @Enumerated(EnumType.STRING)
+    private MatriculaStatusEnum status;
+    /* salva os enum como String em vez de numeros na tabela
+    o que torna muitoa mais facil sua localização no BD */
+}
