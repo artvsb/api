@@ -10,6 +10,7 @@ O aluno tem a opção de se cadastrar em uma determinada disciplina, assim como 
 
 **Estrutura do Projeto**
 
+```text
 .
 ├── insomnia
 │   └── aluno_online-wrk_f82b80e81110447babc2fb01fd790f61.yaml
@@ -90,7 +91,7 @@ O aluno tem a opção de se cadastrar em uma determinada disciplina, assim como 
     │                       └── ProfessorService.class
     └── generated-sources
         └── annotations
-
+```
 
 **Detalhamento do código**
 
