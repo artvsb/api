@@ -4,6 +4,11 @@ import br.com.alunoonline.api.model.MatriculaAluno;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface MatriculaAlunoRepository extends JpaRepository<MatriculaAluno, Long> {
+
+	// SELECT * FROM matricula_aluno WHERE aluno_id = ?
+	List<MatriculaAluno> findByAlunoId(Long alunoId);
 }

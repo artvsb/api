@@ -4,5 +4,6 @@ public enum MatriculaStatusEnum {
     APROVADO,
     REPROVADO,
     TRANCADO,
+	DESLIGADO,
     MATRICULADO;
 }
