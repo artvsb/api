@@ -194,3 +194,34 @@ Antes:<br>
 Depois:<br>
 <img width="1920" height="1080" alt="Captura de Tela 2026-04-07 às 10 22 08" src="https://github.com/user-attachments/assets/c52b83b4-ac8b-4984-b303-418294cc628b" />
 
+11. Método **criarDisciplina()** - cria uma nova disciplina no banco<br>
+
+<img width="1920" height="970" alt="image" src="https://github.com/user-attachments/assets/87a39e58-4e42-4a70-8e80-54705646fccf" />
+<br>
+
+12. Método **buscarTodasDisciplinas()** - busca todas as disciplinas no banco<br>
+
+<img width="1918" height="972" alt="image" src="https://github.com/user-attachments/assets/77d62d95-d5dd-4ca1-a5c4-d3a58ec8c5e5" /><br>
+
+13. Método **buscarDisciplinaPorId()** - busca disciplina específica pelo seu ID<br>
+
+<img width="1918" height="968" alt="image" src="https://github.com/user-attachments/assets/21b0e418-e821-4b83-90e4-0282f0da3bed" />
+<br>
+
+14. Método **deletarDisciplinaPorId()** - deleta uma disciplina cadastrada no banco, pelo seu ID<br>
+
+<img width="1920" height="968" alt="image" src="https://github.com/user-attachments/assets/a931ba51-d4bb-4716-868e-ee7a55075dfd" /><br>
+
+15. Método **atualizarDisciplinaPorId()** - método que atualiza uma disciplina do banco
+
+<img width="1919" height="968" alt="image" src="https://github.com/user-attachments/assets/d35d9427-3989-437d-8658-7a225ce42e78" /><br>
+
+16. Método **matricular()** - matricula um aluno em uma determinada disciplina
+
+<img width="1919" height="975" alt="image" src="https://github.com/user-attachments/assets/4d43f3ec-a258-41a2-875b-3d6e48d8d69f" /><br>
+
+17. Método **trancarMatricula()** - transforma o status da matricula MATRICULADO em TRANCADO, o que não pode ser feito se a matrícula estiver APROVADO ou REPROVADO
+
+<img width="1916" height="970" alt="image" src="https://github.com/user-attachments/assets/e09daded-af5b-4388-a91a-17bdf243ad4b" /><br>
+
+
